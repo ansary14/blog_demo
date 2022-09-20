@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  # You can view the posts without login | But can't edit or create posts
+  before_action :authenticate_user!, except: %i[ show index ]
 
   # GET /posts or /posts.json
   def index

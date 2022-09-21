@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   root "pages#home"
   # about page will be rendered in about directory ; example: localhost:3000/about
   get 'about', to: 'pages#about'
+  # Define the route for users profile
+  get '/u/:id', to: 'users#profile', as: 'user'
 end

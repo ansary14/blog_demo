@@ -20,7 +20,8 @@ class CommentsController < ApplicationController
     flash[:notice] = "Comment deleted successfully!"
   end
 
-  Private
+  private
+  
     def set_post
       @post = Post.find(params[:post_id])
     end

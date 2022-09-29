@@ -8,7 +8,7 @@
 class CommentNotification < Noticed::Base
   # Add your delivery methods
   #
-  # deliver_by :database
+  deliver_by :database
   # deliver_by :email, mailer: "UserMailer"
   # deliver_by :slack
   # deliver_by :custom, class: "MyDeliveryMethod"
@@ -18,12 +18,17 @@ class CommentNotification < Noticed::Base
   # param :post
 
   # Define helper methods to make rendering easier.
-  #
-  # def message
-  #   t(".message")
-  # end
-  #
-  # def url
-  #   post_path(params[:post])
-  # end
+
+  # Define notification messages
+  def message
+    @post = Post.find(params[:comment][:post_id])
+    @comment = Comment.find(params[:comment][:id])
+    @user = User.find(@comment.user_id)
+    "#{@user.email} commented on #{@post.title.truncate(10)}"
+  end
+
+  # Define the path to redirect the notification
+  def url
+    post_path(Post.find(params[:comment][:post_id]))
+  end
 end

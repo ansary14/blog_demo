@@ -79,4 +79,4 @@ gem 'devise'
 # Notifications for your Ruby on Rails app. [https://github.com/excid3/noticed]
 gem 'noticed', '~> 1.6'
 # Ransack will help you easily add searching to your Rails application. [https://github.com/activerecord-hackery/ransack]
-gem "ransack", "~> 3.2"
+gem 'ransack', '~> 3.2'

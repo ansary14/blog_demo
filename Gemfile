@@ -53,6 +53,7 @@ gem 'image_processing', '~> 1.2'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  # RuboCop extension focused on enforcing Rails best practices and coding conventions. [https://github.com/rubocop/rubocop-rails]
   gem 'rubocop-rails', require: false
 end
 
@@ -73,7 +74,9 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
+# Devise is a flexible authentication solution for Rails based on Warden. [https://github.com/heartcombo/devise]
 gem 'devise'
-
+# Notifications for your Ruby on Rails app. [https://github.com/excid3/noticed]
 gem 'noticed', '~> 1.6'
+# Ransack will help you easily add searching to your Rails application. [https://github.com/activerecord-hackery/ransack]
+gem "ransack", "~> 3.2"
